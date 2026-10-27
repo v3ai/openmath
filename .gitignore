@@ -1,0 +1,5 @@
+.lake/
+search/graphs/
+search/__pycache__/
+*.log
+build*.log
