@@ -1,5 +1,10 @@
 # openmath — attacking small open problems with Lean 4 + Mathlib
 
+By Rhett ([@v3ai](https://github.com/v3ai)), working with Anthropic's Claude. The arguments here
+came out of an AI-assisted search and have not been peer reviewed. The Lean files are
+machine-checked, but we may still have misread a problem's intended meaning or missed
+earlier work. Corrections are very welcome; please open an issue.
+
 Lean 4.35.0, Mathlib v4.35.0. Every theorem named `conjectureNN` below is stated **verbatim**
 as in [google-deepmind/formal-conjectures](https://github.com/google-deepmind/formal-conjectures)
 (Apache-2.0), where it is tagged `@[category research open]`. The auxiliary definitions
@@ -12,7 +17,7 @@ unchanged between the two versions.
 
 | Problem | Status before | Result here | File |
 |---|---|---|---|
-| WOWII (Graffiti.pc) #96: α ≤ 1 + min disteven(v)·(max l(v) − 1) | open since 2004; no prior proof found (WOWII page, formal-conjectures, arXiv, Preprints.org checked Oct 2026) | **proved**, Lean-checked | `OpenMath/WOWII96.lean` |
+| WOWII (Graffiti.pc) #96: α ≤ 1 + min disteven(v)·(max l(v) − 1) | marked "O" on the WOWII page since 2004; we found no prior proof (WOWII pages, formal-conjectures, arXiv, Preprints.org checked Oct 2026), but one may exist | proof (we believe correct), Lean-checked against the formal-conjectures statement | `OpenMath/WOWII96.lean` |
 | WOWII (Graffiti.pc) #19: b ≥ ⌊avg ecc + max l(v)⌋ | listed open (WOWII, formal-conjectures), but **already proved** by Chen–Wang–Feng, Preprints.org, 2 Jul 2026 | independent short proof, Lean-checked (its key step is WOWII #13, DeLaVina–Waller 2004) | `OpenMath/WOWII19.lean` |
 | WOWII #84: tree ≥ 2 rad/δ | open | reduced to graphs with a leaf; checked ≤ 9 vertices | — |
 | WOWII #189: max disteven ≤ 1 + σ ⇒ Hamiltonian path | open | diameter ≤ 2 case follows from Ore; checked ≤ 9 vertices | — |
@@ -35,3 +40,8 @@ unchanged between the two versions.
 ```
 lake build OpenMath
 ```
+
+## License
+
+Apache-2.0 (see `LICENSE`), the same licence as formal-conjectures, from which the definitions
+and statements in `OpenMath/Common.lean` and `OpenMath/Upstream.lean` are copied.
