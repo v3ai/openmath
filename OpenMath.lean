@@ -1,4 +1,6 @@
-import OpenMath.Common
-import OpenMath.WOWII96
-import OpenMath.WOWII19
-import OpenMath.Upstream
+module
+
+public import OpenMath.Common
+public import OpenMath.WOWII96
+public import OpenMath.WOWII19
+public import OpenMath.Upstream

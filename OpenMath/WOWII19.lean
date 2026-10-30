@@ -33,12 +33,16 @@ Layer `1` of `v*` is `N(v*)` and contributes `L`; layers `0` and `2, …, e` are
   `d(x_i, y_i) ≥ D + 2i − a − c`, so `{x_i, y_i}` is an independent pair inside layer `i`
   whenever `2i ≥ a + c − D + 2`. Counting those layers gives `b ≥ L + D − 1`.
 -/
-import OpenMath.Common
-import Mathlib.Algebra.Order.Floor.Ring
-import Mathlib.Algebra.Order.Archimedean.Real.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
+module
+
+public import OpenMath.Common
+public import Mathlib.Algebra.Order.Floor.Ring
+public import Mathlib.Algebra.Order.Archimedean.Real.Basic
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 set_option linter.unusedSectionVars false
 

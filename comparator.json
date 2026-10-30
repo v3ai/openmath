@@ -1,0 +1,7 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": ["WrittenOnTheWallII.GraphConjecture96.conjecture96"],
+  "definition_names": ["SimpleGraph.distEven", "SimpleGraph.indepNeighborsCard"],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

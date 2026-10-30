@@ -1,5 +1,5 @@
 name = "openmath"
-defaultTargets = ["OpenMath"]
+defaultTargets = ["OpenMath", "Challenge", "Solution"]
 
 [[require]]
 name = "mathlib"
@@ -8,3 +8,11 @@ rev = "v4.35.0"
 
 [[lean_lib]]
 name = "OpenMath"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]

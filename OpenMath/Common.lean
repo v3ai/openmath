@@ -9,11 +9,15 @@ google-deepmind/formal-conjectures (Apache-2.0), files
 `FormalConjecturesForMathlib/Combinatorics/SimpleGraph/{VertexDistance,Independence,Induced}.lean`,
 so that the theorems in this project are literally the open statements recorded there.
 -/
-import Mathlib.Combinatorics.SimpleGraph.Metric
-import Mathlib.Combinatorics.SimpleGraph.Diam
-import Mathlib.Combinatorics.SimpleGraph.Clique
-import Mathlib.Combinatorics.SimpleGraph.Bipartite
-import Mathlib.Basic.Real.Basic
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Metric
+public import Mathlib.Combinatorics.SimpleGraph.Diam
+public import Mathlib.Combinatorics.SimpleGraph.Clique
+public import Mathlib.Combinatorics.SimpleGraph.Bipartite
+public import Mathlib.Basic.Real.Basic
+
+@[expose] public section
 
 set_option linter.unusedSectionVars false
 

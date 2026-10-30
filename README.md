@@ -33,12 +33,16 @@ unchanged between the two versions.
 * `OpenMath/WOWII96.lean`, `OpenMath/WOWII19.lean` — the two proofs.
 * `OpenMath/Upstream.lean` — formal-conjectures' own definitions and statements, pasted verbatim
   in their original namespaces and proved in one line from the files above.
+* `Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml` — the
+  [Palomar](https://palomar-registry.org/) submission for WOWII #96. `lake comparator` checks
+  that `Solution` proves the `Challenge` statement using only `propext`, `Classical.choice`
+  and `Quot.sound`. `scripts/verify-comparator.sh` is Palomar's template script for this check.
 * `search/` — the exhaustive and randomized searches (Python + numba + nauty canonical forms + CP-SAT/HiGHS).
 
 ## Building
 
 ```
-lake build OpenMath
+lake build
 ```
 
 ## License
