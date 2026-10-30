@@ -11,8 +11,12 @@ Only the `sorry` has been replaced, by a one-line appeal to the proofs in
 `OpenMath/WOWII96.lean` and `OpenMath/WOWII19.lean`. That the appeal type-checks shows the
 linked statements are exactly the repository statements.
 -/
-import OpenMath.WOWII96
-import OpenMath.WOWII19
+module
+
+public import OpenMath.WOWII96
+public import OpenMath.WOWII19
+
+@[expose] public section
 
 /-! Upstream definitions (namespace `SimpleGraph`). -/
 namespace SimpleGraph

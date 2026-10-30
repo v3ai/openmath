@@ -32,9 +32,13 @@ because `I` and `P` are disjoint subsets of the even layer. For `L ≥ 2` this g
 `|I| ≤ (L−1)·D + 1`. For `L = 1` every neighbourhood is a clique, so `G` is complete and
 `α = 1`.
 -/
-import OpenMath.Common
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
+module
+
+public import OpenMath.Common
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Positivity
+
+@[expose] public section
 
 namespace OpenMath.WOWII96
 

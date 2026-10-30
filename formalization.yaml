@@ -1,0 +1,97 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Proof of WOWII Conjecture 96 (DeLaVina, Graffiti.pc)"
+  description: >-
+    A Lean 4 proof of Conjecture 96 of Written on the Wall II (Graffiti.pc):
+    every connected graph G on at least two vertices satisfies
+    α(G) ≤ 1 + min_v disteven(v)·(max_v l(v) − 1), where disteven(v) is the number
+    of vertices at even distance from v and l(v) is the independence number of
+    the neighbourhood of v. The proof gives the stronger bound
+    α(G) ≤ 1 + disteven(v)·(L − 1) for every vertex v, which is sharp for stars.
+  authors:
+    - "Rhett (@v3ai)"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Rhett (@v3ai)"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C69", "05C12"]
+
+sources:
+  - title: "New elementary proof of WOWII Conjecture 96, first presented in this repository (prose version in PROOFS.md)"
+    type: original-proof
+    relationship: other
+  - title: "Written on the Wall II: Conjectures of Graffiti.pc, Conjecture 96"
+    authors:
+      - "Ermelinda DeLaVina"
+    type: web post
+    location: "http://cms.uhd.edu/faculty/delavinae/research/wowII/all.html#conj96"
+    relationship: background
+    note: "Source of the conjecture, listed there with status O (open)."
+    license: "unknown"
+    author_endorsement: not-contacted
+  - title: "Formal Conjectures: WrittenOnTheWallII/GraphConjecture96.lean"
+    type: formalization
+    location: "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/WrittenOnTheWallII/GraphConjecture96.lean"
+    relationship: background
+    note: "The Lean statement and the definitions distEven and indepNeighborsCard are copied verbatim from this file and its dependencies."
+    license: "Apache-2.0"
+    author_endorsement: not-contacted
+
+related_formalizations:
+  - id: "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/WrittenOnTheWallII/GraphConjecture96.lean"
+    relationship: builds-on
+    note: "Statement-only formalization (proof is sorry), tagged research open."
+
+status:
+  scope: >-
+    Proves the formal-conjectures statement of WOWII Conjecture 96 exactly.
+    That statement assumes at least two vertices, because the literal inequality
+    fails for the one-vertex graph. The repository also contains an independent
+    proof of WOWII Conjecture 19, which is not part of this entry.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: agent
+      models: ["Claude (Anthropic)"]
+      framework: "Claude Code"
+      tool_setup: "AI-assisted search for the argument and the Lean proof, with exhaustive graph searches in Python (search/)."
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based"
+        hardware: "API-only"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based"
+  notes: >-
+    The argument and the Lean proof were developed with Claude. The author
+    checked the statement against formal-conjectures and reviewed the prose proof.
+
+fidelity:
+  divergences: "none known; the statement is the formal-conjectures statement verbatim"
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    Not peer reviewed. The statement and the definitions were compared verbatim
+    with formal-conjectures. The build and lake comparator (Lean, nanoda and
+    con-ron kernels) succeed, and the only axioms used are propext,
+    Classical.choice and Quot.sound.
+
+alignment:
+  namespace: "WrittenOnTheWallII.GraphConjecture96"
+  statements:
+    - source: "Written on the Wall II, Conjecture 96"
+      lean: "WrittenOnTheWallII.GraphConjecture96.conjecture96"
+      module: "Challenge"
+      status: proved
+      note: "Proved in OpenMath/WOWII96.lean; restated verbatim in OpenMath/Upstream.lean, which Solution.lean imports."
+
+acknowledgements: "Mathlib; google-deepmind/formal-conjectures for the statement and definitions; Anthropic's Claude."
